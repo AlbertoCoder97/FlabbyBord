@@ -53,13 +53,10 @@ public class BirdMovement : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if(birdCollider.IsTouching(floorCollider))
-        {
-            Debug.Log("You lost!");
+        Debug.Log("You lost!");
 
-            //Just restart the game
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-        }
+        //Just restart the game
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
 
