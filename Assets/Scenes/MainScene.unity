@@ -272,7 +272,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!1 &1065707771
 GameObject:
   m_ObjectHideFlags: 0
@@ -428,7 +428,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1247162510}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -11336, y: 0, z: 0}
+  m_LocalPosition: {x: -11158, y: 2743, z: 0}
   m_LocalScale: {x: 400, y: 400, z: 0.2}
   m_Children: []
   m_Father: {fileID: 0}
@@ -472,10 +472,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d31b969c1e2b474b80ff70be36235ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxHeight: 4968
   birdCollider: {fileID: 1247162513}
   floorCollider: {fileID: 962863745}
-  speed: {x: 0, y: 0}
-  gravity: {x: 0, y: -150}
+  birdBody: {fileID: 1247162515}
+  speed: 0
+  force: 300
+  jump: {x: 0, y: 0}
 --- !u!50 &1247162515
 Rigidbody2D:
   serializedVersion: 4
@@ -496,4 +499,4 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 1
-  m_Constraints: 0
+  m_Constraints: 4
