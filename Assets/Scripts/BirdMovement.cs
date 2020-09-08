@@ -46,6 +46,9 @@ public class BirdMovement : MonoBehaviour
         if (birdBody.position.y > screenBounds.y)
             transform.position = new Vector2(transform.position.x, screenBounds.y);
 
+        if (birdBody.position.x < -screenBounds.y)
+            transform.position = new Vector2(-11158, transform.position.y);
+
         if (Input.GetKeyDown(KeyCode.Space))
             birdBody.AddForce(jump * force, ForceMode2D.Impulse);
             
