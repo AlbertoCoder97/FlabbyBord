@@ -5,11 +5,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class BirdMovement : MonoBehaviour
-{
-
-    //Max height
-    public int maxHeight = 5000;
-
+{ 
     public Collider2D birdCollider;
     public Collider2D floorCollider;
 
@@ -22,6 +18,8 @@ public class BirdMovement : MonoBehaviour
     //For jumping
     public float force;
     public Vector2 jump;
+
+    private Vector2 screenBounds;
 
     // Start is called before the first frame update
     void Start()
@@ -36,14 +34,17 @@ public class BirdMovement : MonoBehaviour
         //Set initial velocity and then never change it
         speed = 2500;
         birdBody.velocity = Vector2.down * speed;
+
+        screenBounds = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, Camera.main.transform.position.z ));
+
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
         //Prevents bird to go out of bounds vertically
-        if (birdBody.position.y > maxHeight)
-            transform.position = new Vector2(transform.position.x, maxHeight);
+        if (birdBody.position.y > screenBounds.y)
+            transform.position = new Vector2(transform.position.x, screenBounds.y);
 
         if (Input.GetKeyDown(KeyCode.Space))
             birdBody.AddForce(jump * force, ForceMode2D.Impulse);
