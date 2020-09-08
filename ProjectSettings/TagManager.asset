@@ -15,7 +15,7 @@ TagManager:
   - 
   - Terrain
   - Bird
-  - 
+  - Pipes
   - 
   - 
   - 
@@ -40,4 +40,13 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Pipes
+    uniqueID: 3323915003
+    locked: 0
+  - name: Terrain
+    uniqueID: 3113071499
+    locked: 0
+  - name: Bird
+    uniqueID: 3973788849
     locked: 0

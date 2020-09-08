@@ -17,6 +17,7 @@ public class BirdMovement : MonoBehaviour
 
     //For gravity
     public float speed;
+    public int gravity;
 
     //For jumping
     public float force;
@@ -29,7 +30,8 @@ public class BirdMovement : MonoBehaviour
         jump = Vector2.up;
         force = 10000;
 
-        birdBody.gravityScale = 1000;
+        gravity = 1000;
+        birdBody.gravityScale = gravity;
 
         //Set initial velocity and then never change it
         speed = 2500;
@@ -44,17 +46,13 @@ public class BirdMovement : MonoBehaviour
             transform.position = new Vector2(transform.position.x, maxHeight);
 
         if (Input.GetKeyDown(KeyCode.Space))
-        {
-            Debug.Log("You jumped!");
             birdBody.AddForce(jump * force, ForceMode2D.Impulse);
-        }
             
     }
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log("You lost!");
-
+        //Add like a restart button or smth
         //Just restart the game
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
